@@ -3,6 +3,7 @@ package com.project.studentmanagement.handling.service;
 import com.project.studentmanagement.handling.dto.Student;
 import com.project.studentmanagement.handling.entity.StudentEntity;
 import com.project.studentmanagement.handling.repository.StudentRepository;
+import com.project.studentmanagement.handling.transformers.StudentTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,8 @@ public class StudentService {
     StudentRepository studentRepo;
 
     public List<StudentEntity> getAllStudents() {
-        //        students.stream().map(studentEntity :: Student)
+        StudentTransformer
+        studentRepo.findAll().stream().map(StudentEntity :: StudentTransformer.toDto())
         return studentRepo.findAll();
     }
 
