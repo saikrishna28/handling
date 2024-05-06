@@ -1,5 +1,6 @@
 package com.project.studentmanagement.handling.controller;
 
+import com.project.studentmanagement.handling.dto.Student;
 import com.project.studentmanagement.handling.entity.StudentEntity;
 import com.project.studentmanagement.handling.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +17,12 @@ public class StudentController {
     @Autowired
     StudentService studentService;
     @GetMapping("/getAllStudents")
-    public List<StudentEntity> getAllStudents() {
+    public List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
 
     @PutMapping("/addStudent")
-    public StudentEntity addStudent (@RequestBody StudentEntity student) {
+    public Student addStudent (@RequestBody Student student) {
         return studentService.saveStudent(student);
     }
 }
