@@ -15,7 +15,6 @@ import lombok.NoArgsConstructor;
 public class StudentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
     private Integer studentId;
     private String firstName;
     private String lastName;

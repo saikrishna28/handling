@@ -4,10 +4,7 @@ import com.project.studentmanagement.handling.dto.Student;
 import com.project.studentmanagement.handling.entity.StudentEntity;
 import com.project.studentmanagement.handling.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,4 +22,10 @@ public class StudentController {
     public Student addStudent (@RequestBody Student student) {
         return studentService.saveStudent(student);
     }
+
+    @PostMapping(value = "/updateStudent", consumes="application/json")
+    public Student updateStudent (@RequestBody Student student) {
+        return studentService.saveStudent(student);
+    }
+
 }
