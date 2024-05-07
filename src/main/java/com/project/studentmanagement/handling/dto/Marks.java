@@ -7,7 +7,7 @@ import lombok.Data;
 @Builder
 public class Marks {
     private Integer id;
-    private String studentId;
+    private Integer studentId;
     private String subject;
     private Float marks;
     private String grade;

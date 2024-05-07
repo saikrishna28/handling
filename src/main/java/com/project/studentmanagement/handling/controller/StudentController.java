@@ -18,6 +18,16 @@ public class StudentController {
         return studentService.getAllStudents();
     }
 
+    @GetMapping("/getStudent/{studentId}")
+    public Student getStudent(@PathVariable Integer studentId) {
+        return studentService.getStudent(studentId);
+    }
+
+    @GetMapping("/getStudentWithMarks/{studentId}")
+    public Student getStudentWithMarks(@PathVariable Integer studentId) {
+        return studentService.getStudentWithMarks(studentId);
+    }
+
     @PutMapping("/addStudent")
     public Student addStudent (@RequestBody Student student) {
         return studentService.saveStudent(student);
@@ -26,6 +36,11 @@ public class StudentController {
     @PostMapping(value = "/updateStudent", consumes="application/json")
     public Student updateStudent (@RequestBody Student student) {
         return studentService.saveStudent(student);
+    }
+
+    @DeleteMapping("/deleteStudent/{studentId}")
+    public void deleteStudent (@PathVariable Integer studentId) {
+        studentService.deleteStudent(studentId);
     }
 
 }

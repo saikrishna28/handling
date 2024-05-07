@@ -3,6 +3,8 @@ package com.project.studentmanagement.handling.dto;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Builder
 public class Student {
@@ -12,4 +14,5 @@ public class Student {
     private String email;
     private Integer age;
     private String address;
+    private List<Marks> marks;
 }
